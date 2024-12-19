@@ -1,0 +1,376 @@
+/* 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 1rem;
+}
+
+/* 페이지 래퍼 */
+#page-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+/* 섹션 기본 스타일 */
+section {
+    margin-bottom: 50px;
+}
+
+/* 배너 스타일 */
+.panel.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 120px;
+    border-radius: 10px;
+}
+
+.panel.banner .content {
+    flex: 1;
+}
+
+.panel.banner .image {
+    flex: 1;
+    max-width: 40%;
+}
+
+.panel.banner img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+    object-fit: cover; /* 이미지 비율을 유지하며 잘리게 합니다 */
+}
+
+/* 기본적인 스타일 */
+.panel.spotlight {
+    display: grid;
+}
+.panel.spot {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 최소 300px 크기로 그리드 생성 */
+    gap: 15px;
+    padding: 20px;
+}
+
+/* 각 비디오를 감싸는 이미지 스타일 */
+.panel.spotlight .image.filtered.tinted {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* 둥근 모서리 */
+    overflow: hidden; /* 이미지가 컨테이너 밖으로 나오지 않게 */
+}
+
+/* 비디오 스타일 */
+.panel.spotlight video {
+    width: 100%; /* 비디오 가로 크기 100% */
+    height: auto; /* 비율에 맞춰 높이 자동 설정 */
+    border-radius: 10px; /* 비디오 둥글게 처리 */
+}
+
+
+/* 비디오 슬라이더 컨테이너 */
+.video-slider {
+    position: relative;
+    width: 100%; /* 100%로 전체 화면 너비를 차지하도록 설정 */
+    max-width: 1000px; /* 최대 너비를 1200px로 설정 (필요에 따라 조정 가능) */
+    margin: 0 auto; /* 화면 중앙에 배치 */
+    height: auto; /* 비디오 슬라이더 높이 설정, 필요에 따라 높이를 조정 */
+}
+
+/* 각 비디오 슬라이드 */
+.video-slide {
+    display: none; /* 기본적으로 슬라이드를 숨김 */
+    width: 100%; /* 슬라이드가 가로 100% 차지 */
+    height: 100%; /* 슬라이드가 세로 100% 차지 */
+}
+
+/* 활성화된 슬라이드만 보이게 */
+.video-slide.active {
+    display: block; /* 활성화된 슬라이드만 보이게 */
+}
+
+/* 비디오 스타일 */
+.video-slider video {
+    width: 100%; /* 비디오 크기를 슬라이더 크기에 맞게 100%로 설정 */
+    height: 100%; /* 비디오 높이 100%로 설정 */
+    object-fit: cover; /* 비디오가 슬라이더의 크기에 맞게 잘리도록 설정 */
+    border-radius: 10px; /* 비디오 모서리 둥글게 처리 */
+}
+
+/* 좌측 버튼 */
+button.prev {
+    position: absolute;
+    top: 50%;
+    left: -60px; /* 버튼을 비디오의 왼쪽 바깥으로 배치 */
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10; /* 버튼이 비디오 위에 오도록 설정 */
+}
+
+/* 우측 버튼 */
+button.next {
+    position: absolute;
+    top: 50%;
+    right: -60px; /* 버튼을 비디오의 오른쪽 바깥으로 배치 */
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10; /* 버튼이 비디오 위에 오도록 설정 */
+}
+
+/* 버튼 hover 효과 */
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 갤러리 섹션 */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery .image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery .image:hover {
+    transform: scale(1.05);
+}
+
+/* 연락처 섹션 */
+.contact-icons {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.contact-icons .icon {
+    font-size: 2rem;
+}
+
+.contact-icons a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-icons a:hover {
+    color: #007BFF;
+}
+
+/* 텍스트 스타일 */
+.intro {
+    margin-bottom: 40px;
+}
+
+.intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* 버튼 스타일 */
+.button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 갤러리 스타일 */
+.gallery {
+    display: grid;
+    gap: 10px; /* 이미지들 간의 간격을 조금 넉넉히 설정 */
+    grid-template-columns: repeat(5, 1fr); /* 3개의 열로 설정 */
+}
+
+/* 각 이미지 컨테이너 스타일 */
+.gallery .image-container {
+    display: block;
+}
+
+/* 이미지 크기 조정 */
+.gallery .image {
+    width: 100%; /* 이미지를 가로로 꽉 채우도록 설정 */
+    height: auto; /* 비율에 맞게 높이 자동 설정 */
+    border-radius: 10px; /* 둥글게 처리 */
+    transition: transform 0.3s ease; /* 마우스 오버 시 확대 효과 */
+}
+
+.gallery .image:hover {
+    transform: scale(1.05); /* 마우스 오버 시 이미지 확대 */
+}
+
+/* 각 이미지가 특정 줄에 배치될 때의 스타일 */
+.group.row-1 .image,
+.group.row-2 .image,
+.group.row-3 .image,
+.group.row-4 .image,
+.group.row-5 .image {
+    grid-column: span 1; /* 기본적으로 각 이미지는 한 열 차지 */
+}
+
+/* 큰 이미지를 클릭했을 때 모달로 열리는 효과 */
+.image.filtered img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover; /* 이미지 비율 유지하면서 컨테이너에 맞게 크기 조정 */
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 1; /* 화면 상에서 가장 위에 표시 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 배경색 반투명 */
+    overflow: auto; /* 화면을 벗어나지 않게 */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 모달 이미지 */
+.modal-content {
+    max-width: 90%; /* 화면 크기에 맞게 이미지 크기 조절 */
+    max-height: 80%; /* 이미지 크기 제한 */
+    margin: auto;
+    display: block;
+}
+
+/* 닫기 버튼 */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #f44336;
+}
+
+/* 갤러리 이미지 스타일 */
+.gallery .image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery .image:hover {
+    transform: scale(1.05);
+}
+
+.instagram-icon {
+    transition: transform 0.3s ease, fill 0.3s ease;
+    cursor: pointer; /* 마우스를 올렸을 때 손가락 모양으로 변경 */
+  }
+  
+  .instagram-icon:hover {
+    transform: scale(1.1); /* 아이콘 크기 확대 */
+    fill: #E1306C; /* 호버 시 색상 변경 */
+  }
+
+/* 모바일 화면에서의 반응형 디자인 */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 모바일에서 작은 크기의 이미지들 */
+    }
+
+    .group .image {
+        grid-column: span 1; /* 모바일 화면에서 모든 이미지 1열로 표시 */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .panel.banner, .panel.spotlight {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .panel.banner .content, .panel.spotlight .content {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .panel.banner .image, .panel.spotlight .image {
+        max-width: 80%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .panel.video, .panel.color1, .panel.color2 {
+        text-align: center;
+    }
+
+    .intro h2 {
+        font-size: 2rem;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+}
