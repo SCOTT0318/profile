@@ -1,143 +1,90 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 비디오 자동 재생 및 음소거 처리
-  var video = document.querySelector('video');
-  if (video) {
-      video.autoplay = true;
-      video.muted = true; // 자동 재생시 소리 끄기
-      video.loop = true; // 반복 재생
-  }
+  // 비디오 설정: 모든 비디오를 자동재생(시도), 음소거, 반복
+  const videos = document.querySelectorAll('.video-slide video');
+  videos.forEach(video => {
+    video.muted = true;
+    video.loop = true;
+    video.autoplay = true;
+    video.play().catch(()=>{});
+  });
 
-  // 모달 관련 기능
+  // 모달 관련 기능 (애니메이션 포함)
   const images = document.querySelectorAll('.gallery .image-container a');
   const modal = document.getElementById('image-modal');
   const modalImg = document.getElementById('modal-img');
   const closeBtn = document.querySelector('.close-btn');
 
-  // 이미지 클릭 시 모달 열기
+  function openModal(src) {
+    if (!modal || !modalImg) return;
+    modalImg.src = src;
+    modal.style.display = 'flex';
+    // allow CSS repaint before adding class
+    setTimeout(() => modal.classList.add('open'), 10);
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { modal.style.display = 'none'; if (modalImg) modalImg.src = ''; }, 220);
+  }
+
   images.forEach(image => {
-      image.addEventListener('click', function(event) {
-          event.preventDefault(); // 링크 기본 동작 방지
-          const imageSrc = this.href; // 클릭한 이미지 경로
-          modal.style.display = "flex"; // 모달 열기
-          modalImg.src = imageSrc; // 모달에 큰 이미지 표시
-      });
+    image.addEventListener('click', function(event) {
+      event.preventDefault();
+      openModal(this.href);
+    });
   });
 
-  // 모달 닫기 버튼 클릭 시
-  closeBtn.addEventListener('click', function() {
-      modal.style.display = "none"; // 모달 닫기
-  });
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  window.addEventListener('click', function(event) { if (event.target === modal) closeModal(); });
+  window.addEventListener('keydown', function(event) { if (event.key === 'Escape') closeModal(); });
 
-  // 모달 바깥 영역 클릭 시 모달 닫기
-  window.addEventListener('click', function(event) {
-      if (event.target === modal) {
-          modal.style.display = "none"; // 모달 닫기
-      }
-  });
-
-  // ESC 키로 모달 닫기
-  window.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") {
-          modal.style.display = "none";
-      }
-  });
-  
-  // 비디오 음소거 해제 버튼 (예시로 추가)
-  const muteButton = document.getElementById('mute-button'); // 음소거 버튼
-  if (muteButton && video) {
-      muteButton.addEventListener('click', function() {
-          video.muted = !video.muted; // 음소거 토글
-      });
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  // 비디오 자동 재생 및 음소거 처리
-  var video = document.querySelector('video');
-  if (video) {
-      video.autoplay = true;
-      video.muted = true; // 자동 재생시 소리 끄기
-      video.loop = true; // 반복 재생
-  }
-
-  // 모달 관련 기능
-  const images = document.querySelectorAll('.gallery .image-container a');
-  const modal = document.getElementById('image-modal');
-  const modalImg = document.getElementById('modal-img');
-  const closeBtn = document.querySelector('.close-btn');
-
-  // 이미지 클릭 시 모달 열기
-  images.forEach(image => {
-      image.addEventListener('click', function(event) {
-          event.preventDefault(); // 링크 기본 동작 방지
-          const imageSrc = this.href; // 클릭한 이미지 경로
-          modal.style.display = "flex"; // 모달 열기
-          modalImg.src = imageSrc; // 모달에 큰 이미지 표시
-      });
-  });
-
-  // 모달 닫기 버튼 클릭 시
-  closeBtn.addEventListener('click', function() {
-      modal.style.display = "none"; // 모달 닫기
-  });
-
-  // 모달 바깥 영역 클릭 시 모달 닫기
-  window.addEventListener('click', function(event) {
-      if (event.target === modal) {
-          modal.style.display = "none"; // 모달 닫기
-      }
-  });
-
-  // ESC 키로 모달 닫기
-  window.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") {
-          modal.style.display = "none";
-      }
-  });
-  
-  // 비디오 음소거 해제 버튼 (예시로 추가)
-  const muteButton = document.getElementById('mute-button'); // 음소거 버튼
-  if (muteButton && video) {
-      muteButton.addEventListener('click', function() {
-          video.muted = !video.muted; // 음소거 토글
-      });
-  }
-
-  // 비디오 슬라이드 기능
+  // 비디오 슬라이드 기능 (자동 재생 + 일시정지 on hover)
   let currentSlide = 0;
   const slides = document.querySelectorAll('.video-slide');
 
   function showSlide(index) {
-      if (index >= slides.length) {
-          currentSlide = 0;
-      } else if (index < 0) {
-          currentSlide = slides.length - 1;
-      } else {
-          currentSlide = index;
+    if (!slides.length) return;
+    if (index >= slides.length) index = 0;
+    if (index < 0) index = slides.length - 1;
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+      const v = slide.querySelector('video');
+      if (v) {
+        if (i === index) { v.play().catch(()=>{}); }
+        else { try { v.pause(); v.currentTime = 0; } catch(e){} }
       }
-
-      // 모든 슬라이드를 숨기고 현재 슬라이드만 보이게 설정
-      slides.forEach(slide => slide.classList.remove('active'));
-      slides[currentSlide].classList.add('active');
+    });
+    currentSlide = index;
   }
 
-  function moveSlide(step) {
-      currentSlide += step;
-      showSlide(currentSlide);  // 이동 후 바로 showSlide 호출
-  }
+  function moveSlide(step) { showSlide(currentSlide + step); }
 
-  // 좌측, 우측 버튼 클릭 시 슬라이드 이동
   const prevButton = document.querySelector('.prev');
   const nextButton = document.querySelector('.next');
+  if (prevButton) prevButton.addEventListener('click', () => moveSlide(-1));
+  if (nextButton) nextButton.addEventListener('click', () => moveSlide(1));
 
-  prevButton.addEventListener('click', function() {
-      moveSlide(-1);  // 이전 슬라이드로 이동
-  });
-
-  nextButton.addEventListener('click', function() {
-      moveSlide(1);  // 다음 슬라이드로 이동
-  });
-
-  // 처음 슬라이드를 표시
   showSlide(currentSlide);
+
+  let autoPlayInterval = setInterval(() => moveSlide(1), 6000);
+  const sliderContainer = document.querySelector('.video-slider');
+  if (sliderContainer) {
+    sliderContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+    sliderContainer.addEventListener('mouseleave', () => { clearInterval(autoPlayInterval); autoPlayInterval = setInterval(() => moveSlide(1), 6000); });
+  }
+
+  // 프로필 카드 마우스 틸트 효과
+  const profileCard = document.querySelector('.profile-card');
+  if (profileCard) {
+    profileCard.addEventListener('mousemove', e => {
+      const rect = profileCard.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      profileCard.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${ -y * 6}deg)`;
+    });
+    profileCard.addEventListener('mouseleave', () => { profileCard.style.transform = ''; });
+  }
 });
