@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 비디오 설정: 모든 비디오를 자동재생(시도), 음소거, 반복
+  // 비디오 설정: 모든 비디오를 자동재생(시도), 음소거. loop는 사용하지 않음 (ended 이벤트로 다음 슬라이드로 넘김).
   const videos = document.querySelectorAll('.video-slide video');
   videos.forEach(video => {
     video.muted = true;
-    video.loop = true;
+    video.loop = false;
     video.autoplay = true;
+    video.playsInline = true;
     video.play().catch(()=>{});
   });
 
@@ -37,13 +38,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // 메인 페이지의 아바타·자기소개 이미지도 클릭하면 모달로 크게 보기
+  const standaloneImages = document.querySelectorAll('.profile-card .avatar img, .panel.spot .image img');
+  standaloneImages.forEach(img => {
+    img.addEventListener('click', function() {
+      openModal(this.src);
+    });
+  });
+
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
   window.addEventListener('click', function(event) { if (event.target === modal) closeModal(); });
   window.addEventListener('keydown', function(event) { if (event.key === 'Escape') closeModal(); });
 
-  // 비디오 슬라이드 기능 (자동 재생 + 일시정지 on hover)
+  // 비디오 슬라이드 기능: 영상이 끝나면(ended) 자동으로 다음 슬라이드로 이동.
   let currentSlide = 0;
   const slides = document.querySelectorAll('.video-slide');
+  const progressBar = document.querySelector('.video-progress-bar');
+
+  function setProgress(pct) {
+    if (progressBar) progressBar.style.width = pct + '%';
+  }
 
   function showSlide(index) {
     if (!slides.length) return;
@@ -53,14 +67,36 @@ document.addEventListener("DOMContentLoaded", function () {
       slide.classList.toggle('active', i === index);
       const v = slide.querySelector('video');
       if (v) {
-        if (i === index) { v.play().catch(()=>{}); }
-        else { try { v.pause(); v.currentTime = 0; } catch(e){} }
+        if (i === index) {
+          try { v.currentTime = 0; } catch(e){}
+          v.play().catch(()=>{});
+        } else {
+          try { v.pause(); v.currentTime = 0; } catch(e){}
+        }
       }
     });
     currentSlide = index;
+    setProgress(0);
   }
 
   function moveSlide(step) { showSlide(currentSlide + step); }
+
+  // 각 비디오 끝나면 다음 슬라이드로 전환
+  videos.forEach((video, i) => {
+    video.addEventListener('ended', () => {
+      if (i === currentSlide) moveSlide(1);
+    });
+  });
+
+  // requestAnimationFrame으로 진행률을 매 프레임 부드럽게 갱신 (timeupdate는 250ms 간격이라 끊김)
+  function tickProgress() {
+    const v = slides[currentSlide] && slides[currentSlide].querySelector('video');
+    if (v && v.duration) {
+      setProgress((v.currentTime / v.duration) * 100);
+    }
+    requestAnimationFrame(tickProgress);
+  }
+  requestAnimationFrame(tickProgress);
 
   const prevButton = document.querySelector('.prev');
   const nextButton = document.querySelector('.next');
@@ -69,11 +105,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   showSlide(currentSlide);
 
-  let autoPlayInterval = setInterval(() => moveSlide(1), 6000);
+  // hover 시 현재 영상 일시정지, 벗어나면 재개
   const sliderContainer = document.querySelector('.video-slider');
   if (sliderContainer) {
-    sliderContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-    sliderContainer.addEventListener('mouseleave', () => { clearInterval(autoPlayInterval); autoPlayInterval = setInterval(() => moveSlide(1), 6000); });
+    sliderContainer.addEventListener('mouseenter', () => {
+      const v = slides[currentSlide] && slides[currentSlide].querySelector('video');
+      if (v) { try { v.pause(); } catch(e){} }
+    });
+    sliderContainer.addEventListener('mouseleave', () => {
+      const v = slides[currentSlide] && slides[currentSlide].querySelector('video');
+      if (v) { v.play().catch(()=>{}); }
+    });
   }
 
   // 프로필 카드 마우스 틸트 효과
