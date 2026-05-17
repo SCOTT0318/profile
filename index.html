@@ -2,10 +2,12 @@
 
 <html>
 	<head>
+		<!-- JSON 위치: data/profile.json -> pageTitle (스크립트 로드 후 문서 제목으로 적용) -->
 		<title>배우 이주호</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css?v=20260517-mobile7" />
+		<link rel="stylesheet" href="assets/css/mobile.css?v=20260517-mobile7" />
 	</head>
 	<body class="is-preload">
 
@@ -16,172 +18,73 @@
 						<!-- Panel (Banner) -->
 							<section class="panel banner">
 								<div class="profile-card">
-									<div class="sparkles" aria-hidden="true">
-										<span></span><span></span><span></span><span></span><span></span><span></span>
-									</div>
-									<div class="info">
-										<h1 class="name">이주호</h1>
-										<p class="role">배우 · 모델</p>
-										<p class="meta">1996년 07월 10일</p>
-										<p class="bio">연기와 표현을 사랑하는 배우입니다. 무대와 스크린을 넘나들며 진실된 연기를 추구합니다.</p>
-										<h3>경력</h3>
-										<ul class="experience">
-											<li>
-												<span class="ex-year">[2024]</span>
-												<span class="ex-type">연극</span>
-												<span class="ex-title">[작품명]</span>
-												<span class="ex-role">[주연]</span>
-											</li>
-											<li>
-												<span class="ex-year">[2023]</span>
-												<span class="ex-type">드라마</span>
-												<span class="ex-title">[작품명]</span>
-												<span class="ex-role">[조연]</span>
-											</li>
-											<li>
-												<span class="ex-year">[2022]</span>
-												<span class="ex-type">영화</span>
-												<span class="ex-title">[작품명]</span>
-												<span class="ex-role">[단역]</span>
-											</li>
-											<li>
-												<span class="ex-year">[2021]</span>
-												<span class="ex-type">광고</span>
-												<span class="ex-title">[브랜드명]</span>
-												<span class="ex-role">[모델]</span>
-											</li>
-											<li>
-												<span class="ex-year">[2019]</span>
-												<span class="ex-type">단편</span>
-												<span class="ex-title">[작품명]</span>
-												<span class="ex-role">[주연]</span>
-											</li>
-										</ul>
-										<a href="gallery.html" class="ex-more">전체 필모그래피 →</a>
-										<div class="socials">
-											<a href="#" class="instagram" aria-label="instagram">
-												<svg xmlns="http://www.w3.org/2000/svg" class="instagram-icon" viewBox="0 0 16 16" width="28" height="28" fill="currentColor">
-													<path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-												</svg>
-											</a>
-											<a href="#contact" class="button">Contact</a>
+										<div class="sparkles" aria-hidden="true">
+											<span></span><span></span><span></span><span></span><span></span><span></span>
 										</div>
-									</div>
+										<div class="info">
+												<!-- JSON 위치: data/profile.json -> heroName, heroRole, heroBirthDate, heroBio -->
+												<h1 class="name" data-profile="heroName"></h1>
+												<p class="role" data-profile="heroRole"></p>
+												<p class="meta" data-profile="heroBirthDate"></p>
+											<p class="bio" data-profile="heroBio"></p>
+											<h3>경력</h3>
+											<!-- JSON 위치: data/profile.json -> experiences -->
+											<ul class="experience" data-profile-list="experiences"></ul>
+											<div class="hero-contact" id="contact">
+												<h3>Contact</h3>
+												<!-- JSON 위치: data/profile.json -> contact.email, contact.instagram / links.instagram -->
+												<p>
+													<span>Email</span>
+													<a data-profile="contact.email" data-link="email"></a>
+												</p>
+												<p>
+													<span>Instagram</span>
+													<a data-profile="contact.instagram" data-link="instagram" target="_blank" rel="noopener"></a>
+												</p>
+											</div>
+										</div>
 									<div class="avatar">
-										<img src="images/pic01.webp" alt="프로필 사진" />
+										<!-- JSON 위치: data/profile.json -> heroImage -->
+										<img data-profile-src="heroImage" alt="프로필 사진" />
 									</div>
 								</div>
 							</section>
 						<!-- Panel (Spot) — About -->
-							<section class="panel spot large left about">
-								<div class="content span-5">
-									<h2 class="major">자기소개</h2>
-								</div>
-								<div class="about-grid">
-									<div class="about-text">
-										<p class="lead">[한 줄로 자신을 표현하는 헤드라인을 입력하세요]</p>
-										<p>[배우로서의 여정과 시작 — 어떻게 연기를 시작했는지, 무엇에 끌렸는지, 어떤 작품과 무대를 거쳐 왔는지 1문단 분량으로 자유롭게 작성합니다.]</p>
-										<blockquote class="pull-quote">"[내가 연기를 통해 전하고 싶은 한 문장, 또는 좋아하는 대사 · 연기 철학]"</blockquote>
-										<p>[앞으로 어떤 배우가 되고 싶은지, 도전해 보고 싶은 장르 · 역할 · 작품의 결을 1문단으로 정리합니다.]</p>
+								<section class="panel spot large left about">
+									<div class="content span-5">
+										<h2 class="major">자기소개</h2>
 									</div>
-									<dl class="about-facts">
-										<dt>이름</dt>
-										<dd>이주호 (Lee Juho)</dd>
-										<dt>생년월일</dt>
-										<dd>1996. 07. 10</dd>
-										<dt>직업</dt>
-										<dd>배우 · 모델</dd>
-										<dt>소속</dt>
-										<dd>[소속사 또는 프리랜서]</dd>
-										<dt>데뷔</dt>
-										<dd>[데뷔 연도 / 작품]</dd>
-									</dl>
+									<div class="about-grid">
+										<div class="about-text">
+											<!-- JSON 위치: data/profile.json -> about.headline, about.journey, about.quote, about.quoteSource, about.future -->
+											<p class="lead" data-profile="about.headline"></p>
+											<p data-profile-html="about.journey"></p>
+											<blockquote class="pull-quote"><span data-profile="about.quote"></span><br /><span data-profile-html="about.quoteSource"></span></blockquote>
+											<p data-profile-html="about.future"></p>
+										</div>
+											<!-- JSON 위치: data/profile.json -> facts -->
+											<dl class="about-facts" data-profile-list="facts"></dl>
+									</div>
+								<div class="image filtered tinted" data-position="top right">
+									<img src="images/about/about-portrait-02.webp" alt="" />
 								</div>
 								<div class="image filtered tinted" data-position="top right">
-									<img src="images/pic02.webp" alt="" />
+									<img src="images/about/about-portrait-04.webp" alt="" />
 								</div>
 								<div class="image filtered tinted" data-position="top right">
-									<img src="images/pic04.webp" alt="" />
+									<img src="images/about/about-portrait-03.webp" alt="" />
 								</div>
 								<div class="image filtered tinted" data-position="top right">
-									<img src="images/pic03.webp" alt="" />
-								</div>
-								<div class="image filtered tinted" data-position="top right">
-									<img src="images/pic05.webp" alt="" />
+									<img src="images/about/about-portrait-05.webp" alt="" />
 								</div>
 							</section>
-
-						<!-- Panel — Contact -->
-							<section class="panel contact" id="contact">
-								<div class="intro">
-									<h2 class="major">Contact</h2>
-								</div>
-								<div class="contact-card">
-									<p class="contact-line">
-										<span>Email</span>
-										<a href="mailto:[email@example.com]">[email@example.com]</a>
-									</p>
-									<p class="contact-line">
-										<span>Instagram</span>
-										<a href="#" target="_blank" rel="noopener">@[instagram_handle]</a>
-									</p>
-									<p class="contact-line">
-										<span>소속 / 매니저</span>
-										<span>[소속사 또는 매니저 연락처]</span>
-									</p>
-									<p class="contact-line">
-										<span>문의</span>
-										<span>[캐스팅 및 협업 문의 환영]</span>
-									</p>
-								</div>
-							</section>
-
 						<!-- Panel — Skills (특기) -->
 							<section class="panel skills">
 								<div class="intro">
 									<h2 class="major">특기</h2>
 								</div>
-								<div class="skill-groups">
-									<div class="skill-group">
-										<h3>액션 / 운동</h3>
-										<ul class="chips">
-											<li>[검도]</li>
-											<li>[복싱]</li>
-											<li>[수영]</li>
-											<li>[축구]</li>
-										</ul>
-									</div>
-									<div class="skill-group">
-										<h3>노래 / 댄스</h3>
-										<ul class="chips">
-											<li>[발라드]</li>
-											<li>[현대무용]</li>
-											<li>[비트박스]</li>
-										</ul>
-									</div>
-									<div class="skill-group">
-										<h3>외국어</h3>
-										<ul class="chips">
-											<li>[영어 — 회화 가능]</li>
-											<li>[일본어 — 기초]</li>
-										</ul>
-									</div>
-									<div class="skill-group">
-										<h3>악기</h3>
-										<ul class="chips">
-											<li>[기타]</li>
-											<li>[피아노]</li>
-										</ul>
-									</div>
-									<div class="skill-group">
-										<h3>기타</h3>
-										<ul class="chips">
-											<li>[운전면허 1종]</li>
-											<li>[사투리 — 경상도]</li>
-											<li>[성대모사]</li>
-										</ul>
-									</div>
-								</div>
+								<!-- JSON 위치: data/profile.json -> skills -->
+								<div class="skill-groups" data-profile-list="skills"></div>
 							</section>
 
 						<!-- Panel (Spotlight) -->
@@ -189,25 +92,13 @@
 							<div class="video-slider">
 								<!-- 비디오 슬라이드 -->
 								<div class="video-slide active">
-									<video src="videos/pic01.mp4" autoplay muted playsinline></video>
-									<div class="video-caption">
-										<span class="video-tag">Reel 01</span>
-										<h4>[작품명 / 장면 설명]</h4>
-									</div>
+									<video src="videos/optimized/reel-01.mp4" autoplay muted playsinline></video>
 								</div>
 								<div class="video-slide">
-									<video src="videos/pic02.mp4" autoplay muted playsinline></video>
-									<div class="video-caption">
-										<span class="video-tag">Reel 02</span>
-										<h4>[작품명 / 장면 설명]</h4>
-									</div>
+									<video src="videos/optimized/reel-02.mp4" autoplay muted playsinline></video>
 								</div>
 								<div class="video-slide">
-									<video src="videos/pic03.mp4" autoplay muted playsinline></video>
-									<div class="video-caption">
-										<span class="video-tag">Reel 03</span>
-										<h4>[작품명 / 장면 설명]</h4>
-									</div>
+									<video src="videos/optimized/reel-03.mp4" autoplay muted playsinline></video>
 								</div>
 							
 								<!-- 좌측 버튼 -->
@@ -228,7 +119,10 @@
 								<h2 class="major">Gallery</h2>
 								<p>다양한 작품 속 모습과 화보를 모아 두었습니다.</p>
 							</div>
-							<a href="gallery.html" class="gallery-link" aria-label="갤러리 전체 보기">
+							<!-- JSON 위치: data/gallery.json -> sections 안의 대표 이미지 -->
+							<div class="gallery-preview" data-gallery-preview></div>
+							<!-- JSON 위치: data/profile.json -> links.filmography -->
+							<a class="gallery-link" aria-label="갤러리 전체 보기" data-link="filmography">
 								<span class="gallery-link-label">갤러리 전체 보기</span>
 								<span class="gallery-link-arrow">→</span>
 							</a>
@@ -243,6 +137,6 @@
 				</div>
 
 		<!-- Scripts -->
-		<script src="assets/script/script.js"></script>
+		<script src="assets/script/index.js?v=20260517-mobile7"></script>
 	</body>
 </html>

@@ -24,6 +24,11 @@ backup_originals
 *.tmp
 *.log
 
+# 원본 미디어 보관 파일 (사이트는 WebP / videos/optimized MP4 사용)
+images/**/*.jpeg
+images/**/*.jpg
+videos/pic*.mp4
+
 # Node 등 (혹시 추가될 경우 대비)
 node_modules
 npm-debug.log

@@ -1,0 +1,260 @@
+{
+  "sections": [
+    {
+      "id": "profile",
+      "kicker": "Profile",
+      "title": "프로필 / 포트레이트",
+      "items": [
+        {
+          "src": "images/profile/profile-intense-01.webp",
+          "alt": "검은 터틀넥을 입은 진중한 프로필 사진",
+          "size": "hero"
+        },
+        {
+          "src": "images/profile/profile-smile-02.webp",
+          "alt": "검은 터틀넥을 입고 웃는 프로필 사진",
+          "size": "tall"
+        },
+        {
+          "src": "images/about/about-portrait-01.webp",
+          "alt": "기존 메인 프로필 무드 컷",
+          "size": "tall"
+        },
+        {
+          "src": "images/about/about-portrait-02.webp",
+          "alt": "컵을 들고 앉아 있는 포트레이트",
+          "size": "standard"
+        },
+        {
+          "src": "images/about/about-portrait-03.webp",
+          "alt": "원형 의자에 앉은 포트레이트",
+          "size": "tall"
+        },
+        {
+          "src": "images/about/about-portrait-04.webp",
+          "alt": "가죽 재킷을 입은 포트레이트",
+          "size": "standard"
+        },
+        {
+          "src": "images/about/about-portrait-05.webp",
+          "alt": "원형 의자에서 웃는 포트레이트",
+          "size": "standard"
+        },
+        {
+          "src": "images/editorial/editorial-05.webp",
+          "alt": "푸른 톤의 실내 포트레이트",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-06.webp",
+          "alt": "흰 셔츠를 입은 포트레이트",
+          "size": "tall"
+        },
+        {
+          "src": "images/editorial/editorial-09.webp",
+          "alt": "야외 난간 앞 포트레이트",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-18.webp",
+          "alt": "검은 셔츠를 입은 상반신 포트레이트",
+          "size": "standard"
+        },
+        {
+          "src": "images/editorial/editorial-20.webp",
+          "alt": "교복 스타일의 야외 포트레이트",
+          "size": "tall"
+        },
+        {
+          "src": "images/editorial/editorial-21.webp",
+          "alt": "흑백 무드의 인물 컷",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-01.webp",
+          "alt": "어두운 조명 아래 안경을 쓴 장면",
+          "size": "wide"
+        }
+      ]
+    },
+    {
+      "id": "romance",
+      "kicker": "Romance",
+      "title": "로맨스 / 야외 장면",
+      "items": [
+        {
+          "src": "images/editorial/editorial-02.webp",
+          "alt": "잔디 위에 누워 웃는 커플 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-04.webp",
+          "alt": "풍선을 든 밝은 커플 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-01.webp",
+          "alt": "바닥에 누워 서로 바라보는 커플 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-03.webp",
+          "alt": "정장과 흰 원피스를 입은 커플 장면",
+          "size": "tall"
+        },
+        {
+          "src": "images/editorial/editorial-08.webp",
+          "alt": "스쿠터 옆에서 마주한 야외 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-10.webp",
+          "alt": "터널 조명 아래 커플 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-14.webp",
+          "alt": "햇살 아래 마주 보는 커플 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-15.webp",
+          "alt": "스쿠터 위에서 웃는 커플 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-16.webp",
+          "alt": "나무 아래 앉아 있는 커플 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-19.webp",
+          "alt": "나무 아래 초록빛 커플 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-22.webp",
+          "alt": "나무 아래 책을 건네는 커플 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-23.webp",
+          "alt": "웨딩 베일 아래 가까이 있는 커플 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-25.webp",
+          "alt": "정장과 원피스 차림의 웃는 커플 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-26.webp",
+          "alt": "야외에서 다정하게 서 있는 커플 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-17.webp",
+          "alt": "스쿠터 옆에서 웃는 야외 현장 컷",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-18.webp",
+          "alt": "계곡 옆에 앉아 있는 야외 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-21.webp",
+          "alt": "야외 정자에서 준비 중인 현장 컷",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-22.webp",
+          "alt": "스쿠터 촬영 현장 컷",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-23.webp",
+          "alt": "계곡 옆에서 촬영 중인 장면",
+          "size": "wide"
+        }
+      ]
+    },
+    {
+      "id": "screen",
+      "kicker": "Screen",
+      "title": "매체 스틸 / 현장 컷",
+      "items": [
+        {
+          "src": "images/editorial/editorial-07.webp",
+          "alt": "긴장감 있는 숲속 투샷",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-11.webp",
+          "alt": "강한 조명 아래 붉은 톤의 투샷",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-13.webp",
+          "alt": "숲속에서 대비감 있는 투샷",
+          "size": "wide"
+        },
+        {
+          "src": "images/editorial/editorial-17.webp",
+          "alt": "등을 맞댄 강한 표정의 투샷",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-03.webp",
+          "alt": "실내에서 박수치는 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-05.webp",
+          "alt": "음료를 마시는 캐주얼한 현장 컷",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-06.webp",
+          "alt": "음료를 들고 있는 현장 컷",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-07.webp",
+          "alt": "식당에서 마주 앉은 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-09.webp",
+          "alt": "드라마 자막이 있는 역 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-11.webp",
+          "alt": "역에서 대화하는 드라마 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-13.webp",
+          "alt": "차량 안에서 촬영 중인 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-14.webp",
+          "alt": "다리 위에서 안아주는 장면",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-15.webp",
+          "alt": "인터뷰 느낌의 화면 캡처",
+          "size": "wide"
+        },
+        {
+          "src": "images/stills/still-20.webp",
+          "alt": "차량 안의 세 인물 장면",
+          "size": "wide"
+        }
+      ]
+    }
+  ]
+}
