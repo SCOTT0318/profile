@@ -150,23 +150,34 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function setupVideoSlider() {
+    const slider = document.querySelector('.video-slider');
     const slides = document.querySelectorAll('.video-slide');
     const videos = document.querySelectorAll('.video-slide video');
     const progressBar = document.querySelector('.video-progress-bar');
     if (!slides.length) return;
 
     let currentSlide = 0;
+    let isSliderVisible = false;
 
     videos.forEach(video => {
       video.muted = true;
       video.loop = false;
-      video.autoplay = true;
       video.playsInline = true;
-      video.play().catch(() => {});
+      video.pause();
     });
 
     function setProgress(pct) {
       if (progressBar) progressBar.style.width = `${pct}%`;
+    }
+
+    function pauseAllVideos() {
+      videos.forEach(video => video.pause());
+    }
+
+    function playCurrentVideo() {
+      if (!isSliderVisible) return;
+      const activeVideo = slides[currentSlide] && slides[currentSlide].querySelector('video');
+      if (activeVideo) activeVideo.play().catch(() => {});
     }
 
     function showSlide(index) {
@@ -180,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (i === index) {
           try { video.currentTime = 0; } catch (error) {}
-          video.play().catch(() => {});
+          if (isSliderVisible) video.play().catch(() => {});
         } else {
           try {
             video.pause();
@@ -213,8 +224,27 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextButton = document.querySelector('.next');
     if (prevButton) prevButton.addEventListener('click', () => moveSlide(-1));
     if (nextButton) nextButton.addEventListener('click', () => moveSlide(1));
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) pauseAllVideos();
+      else playCurrentVideo();
+    });
 
     showSlide(currentSlide);
+
+    if ('IntersectionObserver' in window && slider) {
+      const observer = new IntersectionObserver(entries => {
+        const entry = entries[0];
+        isSliderVisible = Boolean(entry && entry.isIntersecting && entry.intersectionRatio >= 0.35);
+        if (isSliderVisible) playCurrentVideo();
+        else pauseAllVideos();
+      }, { threshold: [0, 0.35, 0.7] });
+
+      observer.observe(slider);
+    } else {
+      isSliderVisible = true;
+      playCurrentVideo();
+    }
+
     requestAnimationFrame(tickProgress);
   }
 

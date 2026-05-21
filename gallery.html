@@ -37,9 +37,21 @@
 							</section>
 
 						<!-- 모달 -->
-						<div id="image-modal" class="modal">
-							<span class="close-btn">&times;</span>
-							<img class="modal-content" id="modal-img" src="" alt="">
+						<div id="image-modal" class="modal media-modal" aria-hidden="true">
+							<button class="close-btn" type="button" aria-label="닫기">&times;</button>
+							<div class="media-modal-frame">
+								<button class="media-nav media-prev" type="button" aria-label="이전 영상">←</button>
+								<img class="modal-content" id="modal-img" src="" alt="">
+								<div class="media-player" data-media-player hidden>
+									<div class="media-player-header">
+										<span>Video</span>
+										<strong id="modal-video-title"></strong>
+										<small id="modal-video-count"></small>
+									</div>
+									<video class="modal-content modal-video" id="modal-video" controls controlslist="nodownload noplaybackrate" disablepictureinpicture playsinline preload="metadata" oncontextmenu="return false"></video>
+								</div>
+								<button class="media-nav media-next" type="button" aria-label="다음 영상">→</button>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -1,6 +1,50 @@
 {
   "sections": [
     {
+      "id": "videos",
+      "kicker": "Video",
+      "title": "영상",
+      "description": "클릭하면 큰 화면에서 재생됩니다.",
+      "items": [
+        {
+          "type": "video",
+          "src": "videos/gallery/episodic-ep2-jansori.mp4",
+          "poster": "images/videos/episodic-ep2-jansori.jpg",
+          "alt": "에피쇼트 ep2. 잔소리 영상 클립",
+          "title": "에피쇼트 ep2. 잔소리",
+          "duration": "5:33",
+          "size": "wide"
+        },
+        {
+          "type": "video",
+          "src": "videos/gallery/weight-loss-reason.mp4",
+          "poster": "images/videos/weight-loss-reason.jpg",
+          "alt": "네가 살을 빼지 못하는 이유 영상 클립",
+          "title": "네가 살을 빼지 못하는 이유",
+          "duration": "0:50",
+          "size": "wide"
+        },
+        {
+          "type": "video",
+          "src": "videos/gallery/free-acting-doorlock-suwi.mp4",
+          "poster": "images/videos/free-acting-doorlock-suwi.jpg",
+          "alt": "자유연기 도어락 - 수위 영상 클립",
+          "title": "자유연기 도어락 - 수위",
+          "duration": "2:23",
+          "size": "wide"
+        },
+        {
+          "type": "video",
+          "src": "videos/gallery/free-doctor-reenactment.mp4",
+          "poster": "images/videos/free-doctor-reenactment.jpg",
+          "alt": "프리한 닥터 재연 배우 영상 클립",
+          "title": "프리한 닥터 재연 배우",
+          "duration": "1:57",
+          "size": "wide"
+        }
+      ]
+    },
+    {
       "id": "profile",
       "kicker": "Profile",
       "title": "프로필 / 포트레이트",

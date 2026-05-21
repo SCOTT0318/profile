@@ -24,10 +24,15 @@ backup_originals
 *.tmp
 *.log
 
-# 원본 미디어 보관 파일 (사이트는 WebP / videos/optimized MP4 사용)
+# 원본 미디어 보관 파일 (사이트는 WebP / 최적화 MP4 사용)
 images/**/*.jpeg
 images/**/*.jpg
+!images/videos/episodic-ep2-jansori.jpg
+!images/videos/weight-loss-reason.jpg
+!images/videos/free-acting-doorlock-suwi.jpg
+!images/videos/free-doctor-reenactment.jpg
 videos/pic*.mp4
+videos/gallery/source/
 
 # Node 등 (혹시 추가될 경우 대비)
 node_modules
