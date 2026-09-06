@@ -279,5 +279,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
   setupModal();
   setupVideoSlider();
-  setupProfileTilt();
+  document.body.classList.remove('is-preload');
 });

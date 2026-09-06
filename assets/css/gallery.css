@@ -7,6 +7,16 @@ body.gallery-page {
     overflow-x: clip;
 }
 
+body.gallery-page {
+    background: var(--paper);
+}
+
+.gallery-page #wrapper {
+    width: min(1400px, 100%);
+    margin: 0 auto;
+    padding-inline: 6vw;
+}
+
 .gallery-page #page-wrapper {
     padding-top: 60px;
 }
@@ -16,7 +26,7 @@ body.gallery-page {
     align-items: flex-end;
     justify-content: space-between;
     gap: 32px;
-    padding-bottom: 28px;
+    padding: 36px 0 28px;
     border-bottom: 1px solid var(--line);
     margin-bottom: 72px;
 }

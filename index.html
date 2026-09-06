@@ -1,142 +1,114 @@
-<!DOCTYPE HTML>
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="배우 이주호의 프로필, 출연 경력, 쇼릴과 포트폴리오" />
+    <title>배우 이주호</title>
+    <link rel="stylesheet" href="assets/css/main.css?v=20260905" />
+    <link rel="stylesheet" href="assets/css/mobile.css?v=20260905" />
+  </head>
+  <body class="is-preload">
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="이주호 프로필 홈"><span>LEE JUHO</span><small>ACTOR</small></a>
+      <nav aria-label="주요 메뉴">
+        <a href="#about">About</a><a href="#career">Career</a><a href="#showreel">Showreel</a><a href="#gallery">Gallery</a>
+      </nav>
+      <a class="header-contact" href="#contact">Contact</a>
+    </header>
 
-<html>
-	<head>
-		<!-- JSON 위치: data/profile.json -> pageTitle (스크립트 로드 후 문서 제목으로 적용) -->
-		<title>배우 이주호</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css?v=20260517-mobile7" />
-		<link rel="stylesheet" href="assets/css/mobile.css?v=20260517-mobile7" />
-	</head>
-	<body class="is-preload">
+    <main id="top">
+      <section class="hero panel banner" aria-labelledby="hero-name">
+        <div class="profile-card">
+          <div class="hero-copy info">
+            <p class="eyebrow">Actor Portfolio · Seoul</p>
+            <h1 class="name" id="hero-name" data-profile="heroName"></h1>
+            <p class="english-name">LEE JUHO</p>
+            <p class="role" data-profile="heroRole"></p>
+            <p class="hero-bio bio" data-profile="heroBio"></p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#showreel">쇼릴 보기 <span>↗</span></a>
+              <a class="button button-ghost" data-link="filmography">포트폴리오</a>
+            </div>
+            <div class="hero-meta"><span>Born</span><strong data-profile="heroBirthDate"></strong></div>
+          </div>
+          <div class="avatar hero-portrait">
+            <img data-profile-src="heroImage" alt="배우 이주호 프로필 사진" />
+            <span class="portrait-caption">LEE JUHO · ACTOR</span>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#about">Scroll to discover <span>↓</span></a>
+      </section>
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
-				<!-- Wrapper -->
-					<div id="wrapper">
-						<!-- Panel (Banner) -->
-							<section class="panel banner">
-								<div class="profile-card">
-										<div class="sparkles" aria-hidden="true">
-											<span></span><span></span><span></span><span></span><span></span><span></span>
-										</div>
-										<div class="info">
-												<!-- JSON 위치: data/profile.json -> heroName, heroRole, heroBirthDate, heroBio -->
-												<h1 class="name" data-profile="heroName"></h1>
-												<p class="role" data-profile="heroRole"></p>
-												<p class="meta" data-profile="heroBirthDate"></p>
-											<p class="bio" data-profile="heroBio"></p>
-											<h3>경력</h3>
-											<!-- JSON 위치: data/profile.json -> experiences -->
-											<ul class="experience" data-profile-list="experiences"></ul>
-											<div class="hero-contact" id="contact">
-												<h3>Contact</h3>
-												<!-- JSON 위치: data/profile.json -> contact.email, contact.instagram / links.instagram -->
-												<p>
-													<span>Email</span>
-													<a data-profile="contact.email" data-link="email"></a>
-												</p>
-												<p>
-													<span>Instagram</span>
-													<a data-profile="contact.instagram" data-link="instagram" target="_blank" rel="noopener"></a>
-												</p>
-											</div>
-										</div>
-									<div class="avatar">
-										<!-- JSON 위치: data/profile.json -> heroImage -->
-										<img data-profile-src="heroImage" alt="프로필 사진" />
-									</div>
-								</div>
-							</section>
-						<!-- Panel (Spot) — About -->
-								<section class="panel spot large left about">
-									<div class="content span-5">
-										<h2 class="major">자기소개</h2>
-									</div>
-									<div class="about-grid">
-										<div class="about-text">
-											<!-- JSON 위치: data/profile.json -> about.headline, about.journey, about.quote, about.quoteSource, about.future -->
-											<p class="lead" data-profile="about.headline"></p>
-											<p data-profile-html="about.journey"></p>
-											<blockquote class="pull-quote"><span data-profile="about.quote"></span><br /><span data-profile-html="about.quoteSource"></span></blockquote>
-											<p data-profile-html="about.future"></p>
-										</div>
-											<!-- JSON 위치: data/profile.json -> facts -->
-											<dl class="about-facts" data-profile-list="facts"></dl>
-									</div>
-								<div class="image filtered tinted" data-position="top right">
-									<img src="images/about/about-portrait-02.webp" alt="" />
-								</div>
-								<div class="image filtered tinted" data-position="top right">
-									<img src="images/about/about-portrait-04.webp" alt="" />
-								</div>
-								<div class="image filtered tinted" data-position="top right">
-									<img src="images/about/about-portrait-03.webp" alt="" />
-								</div>
-								<div class="image filtered tinted" data-position="top right">
-									<img src="images/about/about-portrait-05.webp" alt="" />
-								</div>
-							</section>
-						<!-- Panel — Skills (특기) -->
-							<section class="panel skills">
-								<div class="intro">
-									<h2 class="major">특기</h2>
-								</div>
-								<!-- JSON 위치: data/profile.json -> skills -->
-								<div class="skill-groups" data-profile-list="skills"></div>
-							</section>
+      <section class="about-section panel spot" id="about">
+        <div class="section-label"><span>01</span> About</div>
+        <div class="about-heading">
+          <p class="eyebrow">About the actor</p>
+          <h2 data-profile="about.headline"></h2>
+        </div>
+        <div class="about-layout">
+          <div class="about-visual image">
+            <img src="images/about/about-portrait-02.webp" alt="배우 이주호의 자연광 포트레이트" loading="lazy" />
+            <img class="about-visual-secondary" src="images/about/about-portrait-04.webp" alt="배우 이주호 포트레이트" loading="lazy" />
+          </div>
+          <div class="about-copy">
+            <p class="about-story" data-profile-html="about.journey"></p>
+            <blockquote><span data-profile="about.quote"></span><cite data-profile-html="about.quoteSource"></cite></blockquote>
+            <p data-profile-html="about.future"></p>
+          </div>
+        </div>
+      </section>
 
-						<!-- Panel (Spotlight) -->
-						<section class="panel spotlight medium right" id="video-slider">
-							<div class="video-slider">
-								<!-- 비디오 슬라이드 -->
-								<div class="video-slide active">
-									<video src="videos/optimized/reel-01.mp4" muted playsinline preload="metadata"></video>
-								</div>
-								<div class="video-slide">
-									<video src="videos/optimized/reel-02.mp4" muted playsinline preload="metadata"></video>
-								</div>
-								<div class="video-slide">
-									<video src="videos/optimized/reel-03.mp4" muted playsinline preload="metadata"></video>
-								</div>
-							
-								<!-- 좌측 버튼 -->
-								<button class="prev slide-button">←</button>
-								<!-- 우측 버튼 -->
-								<button class="next slide-button">→</button>
+      <section class="career-section" id="career">
+        <div class="section-label section-label-light"><span>02</span> Profile</div>
+        <div class="career-grid">
+          <div><p class="eyebrow">Selected works</p><h2>무대에서 매체로,<br />경계를 넓혀갑니다.</h2></div>
+          <div><h3>Career</h3><ul class="experience" data-profile-list="experiences"></ul></div>
+          <div><h3>Profile</h3><dl class="about-facts" data-profile-list="facts"></dl></div>
+        </div>
+        <div class="skills-row"><p class="skills-title">Specialties</p><div class="skill-groups" data-profile-list="skills"></div></div>
+      </section>
 
-								<!-- 재생 진행 바 -->
-								<div class="video-progress" aria-hidden="true">
-									<div class="video-progress-bar"></div>
-								</div>
-							</div>
-						</section>
+      <section class="showreel-section panel spotlight" id="showreel">
+        <div class="showreel-heading">
+          <div class="section-label"><span>03</span> Showreel</div>
+          <div><p class="eyebrow">Scene & movement</p><h2>Showreel</h2></div>
+          <p>표정과 움직임, 장면 안의 호흡을 영상으로 확인하세요.</p>
+        </div>
+        <div class="video-slider">
+          <div class="video-slide active"><video src="videos/optimized/reel-01.mp4" muted playsinline preload="metadata"></video></div>
+          <div class="video-slide"><video src="videos/optimized/reel-02.mp4" muted playsinline preload="metadata"></video></div>
+          <div class="video-slide"><video src="videos/optimized/reel-03.mp4" muted playsinline preload="metadata"></video></div>
+          <div class="video-overlay"><span>LEE JUHO</span><strong>ACTOR SHOWREEL</strong></div>
+          <div class="video-controls"><button class="prev slide-button" type="button" aria-label="이전 영상">←</button><span>SCENE</span><button class="next slide-button" type="button" aria-label="다음 영상">→</button></div>
+          <div class="video-progress" aria-hidden="true"><div class="video-progress-bar"></div></div>
+        </div>
+      </section>
 
-						<!-- Panel — Gallery CTA -->
-						<section class="panel gallery-cta" id="gallery">
-							<div class="intro">
-								<h2 class="major">Gallery</h2>
-								<p>다양한 작품 속 모습과 화보를 모아 두었습니다.</p>
-							</div>
-							<!-- JSON 위치: data/gallery.json -> sections 안의 대표 이미지 -->
-							<div class="gallery-preview" data-gallery-preview></div>
-							<!-- JSON 위치: data/profile.json -> links.filmography -->
-							<a class="gallery-link" aria-label="갤러리 전체 보기" data-link="filmography">
-								<span class="gallery-link-label">갤러리 전체 보기</span>
-								<span class="gallery-link-arrow">→</span>
-							</a>
-						</section>
+      <section class="gallery-section panel gallery-cta" id="gallery">
+        <div class="gallery-heading">
+          <div class="section-label"><span>04</span> Portfolio</div>
+          <h2>Selected<br /><em>Moments</em></h2>
+          <a class="text-link" data-link="filmography">전체 갤러리 보기 <span>↗</span></a>
+        </div>
+        <div class="gallery-preview" data-gallery-preview></div>
+      </section>
 
-						<!-- 모달 -->
-						<div id="image-modal" class="modal">
-							<span class="close-btn">&times;</span>
-							<img class="modal-content" id="modal-img" src="" alt="">
-						</div>
-					</div>
-				</div>
+      <section class="contact-section" id="contact">
+        <p class="eyebrow">Casting · Collaboration</p>
+        <h2>좋은 장면을 함께<br />만들고 싶습니다.</h2>
+        <div class="contact-links">
+          <a data-link="email"><span>Email</span><strong data-profile="contact.email"></strong><b>↗</b></a>
+          <a data-link="instagram" target="_blank" rel="noopener"><span>Instagram</span><strong data-profile="contact.instagram"></strong><b>↗</b></a>
+        </div>
+        <footer><span>LEE JUHO · ACTOR</span><small>© 2026 Portfolio</small></footer>
+      </section>
+    </main>
 
-		<!-- Scripts -->
-		<script src="assets/script/index.js?v=20260517-mobile7"></script>
-	</body>
+    <div id="image-modal" class="modal" aria-hidden="true">
+      <button class="close-btn" type="button" aria-label="닫기">×</button>
+      <img class="modal-content" id="modal-img" src="" alt="확대 이미지" />
+    </div>
+    <script src="assets/script/index.js?v=20260905"></script>
+  </body>
 </html>
