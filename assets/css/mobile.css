@@ -1,51 +1,67 @@
-@media (max-width: 900px) {
-  .site-header { grid-template-columns: 1fr auto; height: 68px; padding: 0 22px; }
+@media (max-width: 1100px) {
+  .site-header { grid-template-columns: 1fr auto; height: 64px; padding: 0 22px; }
   .site-header nav { display: none; }
-  .profile-card { grid-template-columns: 1fr; transform: none !important; }
-  .hero-copy { min-height: 63svh; padding: 110px 24px 56px; }
-  .hero-portrait { height: 62svh; }
-  .name { font-size: clamp(5rem, 26vw, 8rem); }
-  .hero-actions { flex-wrap: wrap; }
-  .scroll-cue { display: none; }
-  .about-section, .showreel-section, .gallery-section { padding: 86px 24px; }
-  .section-label { margin-bottom: 45px; }
-  .about-heading, .about-layout, .showreel-heading, .gallery-section { grid-template-columns: 1fr; }
-  .about-heading { gap: 18px; margin-bottom: 52px; }
-  .about-layout { gap: 60px; }
-  .about-visual { padding-right: 12%; }
-  .about-copy { font-size: .88rem; }
-  .career-section { padding: 86px 24px; }
-  .career-grid { grid-template-columns: 1fr; gap: 64px; }
-  .skills-row { grid-template-columns: 1fr; margin-top: 65px; }
-  .skill-groups { grid-template-columns: repeat(2, 1fr); }
-  .showreel-heading { gap: 28px; }
-  .showreel-heading .section-label { margin-bottom: 20px; }
-  .video-slider { aspect-ratio: 9 / 12; }
-  .video-overlay strong { font-size: 2.1rem; }
-  .gallery-heading { position: static; margin-bottom: 55px; }
-  .gallery-preview { gap: 8px; }
-  .gallery-preview-card img { min-height: 220px; }
-  .contact-section { padding: 90px 24px 28px; }
-  .contact-section h2 { margin-bottom: 60px; }
-  .contact-links a { grid-template-columns: 90px 1fr auto; }
-  .contact-section footer { margin-top: 80px; }
+  .profile-sheet { grid-template-columns: 42% 58%; }
+  .profile-content { padding: 86px 26px 24px; }
+  .profile-intro { grid-template-columns: 1fr; grid-template-areas: "eyebrow" "name" "statement" "summary"; }
+  .name-lockup h1 { font-size: clamp(4rem, 9vw, 6rem); }
+  .profile-statement { margin-top: 18px; }
+  .profile-quickview { grid-template-columns: 1fr 1fr; }
+  .skills-block { grid-column: 1 / -1; }
+  .skill-groups { grid-template-columns: repeat(4, 1fr); }
+  .profile-media { grid-template-columns: 1fr; }
+  .profile-footer { grid-template-columns: 1fr auto; }
+  .profile-footer p { grid-column: 1 / -1; }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 760px) {
+  .site-header { color: #fff; mix-blend-mode: difference; }
   .wordmark small { display: none; }
-  .header-contact { font-size: .58rem; }
-  .hero-copy { min-height: 70svh; }
-  .hero-bio { font-size: .87rem; }
-  .hero-portrait { height: 56svh; }
-  .portrait-caption { right: 14px; bottom: 20px; }
-  .about-heading h2 { font-size: 2.8rem; }
-  .about-visual-secondary { width: 42%; border-width: 6px; }
-  .experience li { grid-template-columns: 38px 48px 1fr; }
+  .header-contact { font-size: .56rem; }
+  .profile-sheet { display: block; }
+  .portrait-panel { position: relative; height: 68svh; min-height: 480px; }
+  .portrait-panel > img { object-position: center 22%; }
+  .portrait-index { left: 22px; }
+  .portrait-credit { right: 18px; }
+  .profile-content { min-height: 0; padding: 54px 22px 24px; }
+  .profile-intro { padding-bottom: 32px; }
+  .eyebrow { margin-bottom: 12px; }
+  .name-lockup { gap: 16px; }
+  .name-lockup h1 { font-size: clamp(4.6rem, 23vw, 7rem); }
+  .name-lockup p { font-size: .64rem; }
+  .profile-statement { max-width: 390px; margin-top: 28px; font-size: 1.55rem; }
+  .profile-summary { max-width: 500px; margin-top: 8px; font-size: .78rem; }
+  .profile-quickview { grid-template-columns: 1fr; gap: 28px; padding: 30px 0; }
+  .skills-block { grid-column: auto; }
+  .block-heading { margin-bottom: 14px; }
+  .about-facts { gap-block: 8px; }
+  .about-facts dt, .experience .ex-year, .experience .ex-type { font-size: .59rem; }
+  .about-facts dd, .experience li { font-size: .69rem; }
+  .experience li { grid-template-columns: 40px 52px minmax(0, 1fr) auto; padding: 7px 0; }
+  .skill-groups { grid-template-columns: repeat(2, 1fr); gap: 14px 20px; }
+  .skill-group h3 { font-size: .55rem; }
+  .chips li { font-size: .66rem; }
+  .profile-media { gap: 10px; padding: 22px 0; }
+  .video-slider, .gallery-card { height: auto; aspect-ratio: 16 / 10; }
+  .gallery-card-copy { width: 65%; padding: 20px; }
+  .gallery-preview-card:nth-child(3) { display: none; }
+  .gallery-preview { grid-template-columns: repeat(2, 1fr); }
+  .profile-footer { grid-template-columns: 1fr; gap: 18px; padding-top: 24px; }
+  .profile-footer p { grid-column: auto; font-size: .9rem; }
+  .contact-links { flex-wrap: wrap; gap: 16px 24px; }
+  .contact-links strong { font-size: .68rem; }
+  .profile-footer small { margin-top: 10px; }
+}
+
+@media (max-width: 420px) {
+  .portrait-panel { height: 62svh; min-height: 430px; }
+  .profile-content { padding-inline: 18px; }
+  .name-lockup h1 { font-size: 4.75rem; }
+  .profile-statement { font-size: 1.35rem; }
+  .experience li { grid-template-columns: 38px 46px minmax(0, 1fr); }
   .experience .ex-role { display: none; }
-  .gallery-preview { grid-template-columns: 1fr; }
-  .gallery-preview-card:nth-child(3n + 1) { grid-row: auto; }
-  .gallery-preview-card img { min-height: 0; aspect-ratio: 4 / 5; }
-  .contact-section h2 { font-size: 3.25rem; }
-  .contact-links a { grid-template-columns: 1fr auto; }
-  .contact-links span { grid-column: 1 / -1; }
+  .video-slider { aspect-ratio: 4 / 3; }
+  .gallery-card { aspect-ratio: 4 / 3; }
+  .gallery-card-copy { width: 72%; padding: 18px; }
+  .gallery-card-copy h2 { font-size: 2rem; }
 }

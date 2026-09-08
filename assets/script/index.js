@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      const standaloneImage = event.target.closest('.profile-card .avatar img, .panel.spot .image img');
+      const standaloneImage = event.target.closest('.portrait-panel > img');
       if (standaloneImage) openModal(standaloneImage.currentSrc || standaloneImage.src);
     });
 
@@ -154,6 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const slides = document.querySelectorAll('.video-slide');
     const videos = document.querySelectorAll('.video-slide video');
     const progressBar = document.querySelector('.video-progress-bar');
+    const slideCount = document.querySelector('.video-controls span');
     if (!slides.length) return;
 
     let currentSlide = 0;
@@ -201,6 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       currentSlide = index;
+      if (slideCount) slideCount.textContent = `${String(index + 1).padStart(2, '0')} — ${String(slides.length).padStart(2, '0')}`;
       setProgress(0);
     }
 
